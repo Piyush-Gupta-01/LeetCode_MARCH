@@ -1,0 +1,24 @@
+                                                    //LEETCODE By PIYUSH
+//DAY_3 
+//2485.Find the Pivot Integer
+class Solution {
+    public int pivotInteger(int n) {
+       int totalSum=0;
+        if(n==1){
+            return 1;
+        }
+        for(int i=1;i<=n;i++){
+            totalSum=totalSum+i;
+        }int sum=n;
+        for(int i=n;i>0;i--){
+            totalSum=totalSum-n;
+            sum=sum+(n-1);
+            if(totalSum==sum){
+                return n-1;
+            }else {
+                n--;
+            }
+        }
+        return -1;
+    }
+}
